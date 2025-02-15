@@ -15,9 +15,12 @@ run this program using the console pauser or add your own getch, system("pause")
 int main(int argc, char** argv) {
 	double a,b,c;
 	double x1,x2,d;
-	a = 2,3;
-	b = 10,1;
-	c = 5,8;
+	a = printf("vvedite a:\n");
+	scanf("%lf",&a);
+	b = printf("vvedite b:\n");
+	scanf("%lf",&b);
+	c = printf("vvedite c:\n");
+	scanf("%lf",&c);
 	d = b * b - 4 * a * c;
 	if (d<0) printf("net korney");
 	if (d>0) {
