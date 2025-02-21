@@ -1,39 +1,40 @@
-#include <iostream>
+
 #include <stdio.h>
 #include <math.h>
 
-
-/* ЗАДАНИЕ 1
-	Объявить вещественные переменные a, b и с и задать их значения.
-	Предполагая, что a, b, c есть коэффициенты квадратного уравнения вывести на консоль значения их корней х1, х2. Следует подобрать такие значения коэффициентов, при которых корни будут существовать.
-	Примечание. Для выполнения задания потребуется функции вычисления квад-ратного корня (возведение в степень), а так же вывод данных на консоль.
-	Возведение в степень - подключаем заголовочный файл	 math.h и исполь-зуем функцию pow, первым параметром которого должен быть возводимое значение, а вторым - степень, тип данных double.
-	Вывод данных - заголовочный файл stdio.h, функция printf, первым параметром является форматная строка, а последующие - переменные, значения которых необхо-димо вывести.
-
-run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 int main(int argc, char** argv) {
+	int start,answer;
+	start=0;
 	double a,b,c;
 	double x1,x2,d;
-	a = printf("vvedite a:\n");
-	scanf("%lf",&a);
-	b = printf("vvedite b:\n");
-	scanf("%lf",&b);
-	c = printf("vvedite c:\n");
-	scanf("%lf",&c);
-	d = b * b - 4 * a * c;
-	if (d<0) printf("net korney");
-	if (d>0) {
-		x1= -b + sqrt(d)/(2*a);
-		x2= -b - sqrt(d)/(2*a);
+	while (start==0) {
+		a = printf("vvedite a:\n");
+		scanf("%lf",&a);
+		b = printf("vvedite b:\n");
+		scanf("%lf",&b);
+		c = printf("vvedite c:\n");
+		scanf("%lf",&c);
+		d = b * b - 4 * a * c;
+		if (d<0) printf("net korney\n");
+		if (d>0) {
+			x1= -b + sqrt(d)/(2*a);
+			x2= -b - sqrt(d)/(2*a);
 	
-		printf("x1 = %lf\n",x1);
-		printf("x2 = %lf\n",x2);
-		printf("d = %lf\n",d);
-	}
-	if (d==0) {
-		x1= -b + sqrt(d)/(2*a);
-		printf("only one root x = %lf\n",x1);		
+			printf("x1 = %lf\n",x1);
+			printf("x2 = %lf\n",x2);
+			printf("d = %lf\n",d);
+		}
+		if (d==0) {
+			x1= -b + sqrt(d)/(2*a);
+			printf("only one root x = %lf\n",x1);		
+		}
+		printf("hotite zapustit eshe raz? (1-da,2-net)\n");
+		scanf("%d",&answer);
+		if (answer==1) start=0;
+		if (answer==2) start=1;
+		
+		
+		
 	}
 	return 0;
 }
